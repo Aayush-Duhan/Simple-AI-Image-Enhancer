@@ -6,7 +6,7 @@ const ImagePreview = ({ originalImage, enhancedImage, isLoading }) => {
     // If loading, show the loading indicator
     if (isLoading) {
         return (
-            <div className="mt-8 w-full max-w-2xl p-4 bg-white shadow-lg rounded-2xl flex justify-center items-center min-h-[300px]">
+            <div className="mt-8 w-full max-w-2xl p-4 bg-white dark:bg-gray-800 shadow-lg rounded-2xl flex justify-center items-center min-h-[300px]">
                 <Loading />
                 {/* Optionally show original image dimmed while loading */}
                 {/* originalImage && <img src={originalImage} alt="Original Uploaded" className="mt-4 max-w-full h-auto rounded opacity-50" /> */}
@@ -23,8 +23,8 @@ const ImagePreview = ({ originalImage, enhancedImage, isLoading }) => {
     // We only show the original image in this case.
     if (originalImage && !enhancedImage && !isLoading) {
          return (
-             <div className="mt-8 w-full max-w-2xl p-4 bg-white shadow-lg rounded-2xl">
-                <h2 className="text-xl font-semibold text-center text-gray-700 mb-4">Original Image</h2>
+             <div className="mt-8 w-full max-w-2xl p-4 bg-white dark:bg-gray-800 shadow-lg rounded-2xl">
+                <h2 className="text-xl font-semibold text-center text-gray-700 dark:text-gray-300 mb-4">Original Image</h2>
                 <img src={originalImage} alt="Original Uploaded" className="max-w-full h-auto rounded mx-auto" style={{ maxHeight: '60vh' }} />
             </div>
          );
@@ -42,8 +42,8 @@ const ImagePreview = ({ originalImage, enhancedImage, isLoading }) => {
         };
 
         return (
-             <div className="mt-8 w-full max-w-2xl p-4 bg-white shadow-lg rounded-2xl">
-                 <h2 className="text-xl font-semibold text-center text-gray-700 mb-4">Compare Images</h2>
+             <div className="mt-8 w-full max-w-2xl p-4 bg-white dark:bg-gray-800 shadow-lg rounded-2xl">
+                 <h2 className="text-xl font-semibold text-center text-gray-700 dark:text-gray-300 mb-4">Compare Images</h2>
                  {/* --- Start of ReactCompareSlider code --- */}
                  <ReactCompareSlider
                      style={{ height: '70vh', width: '100%', margin: '0 auto' }}
@@ -72,7 +72,7 @@ const ImagePreview = ({ originalImage, enhancedImage, isLoading }) => {
                         <a
                           href={enhancedImage} // Use the enhanced image URL
                           download="enhanced-image.png" // Suggest a filename for download
-                          className="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300"
+                          className="inline-block bg-blue-500 hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-800 text-white font-bold py-2 px-4 rounded transition duration-300"
                         >
                             Download Enhanced Image
                         </a>
